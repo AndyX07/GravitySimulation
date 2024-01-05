@@ -1,7 +1,7 @@
 #ifndef _PLANET_H_
 #define _PLANET_H_
 
-#include "/usr/include/SDL2/SDL.h"
+#include <SDL2/SDL.h>
 
 using namespace std;
 

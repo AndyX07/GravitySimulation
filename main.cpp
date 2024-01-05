@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#include "/usr/include/SDL2/SDL.h"
+#include <SDL2/SDL.h>
 #include "Simulate.h"
 
 int main(){

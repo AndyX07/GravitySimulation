@@ -1,9 +1,9 @@
 #ifndef _SIMULATE_H_
 #define _SIMULATE_H_
 
-#include "/usr/include/SDL2/SDL.h"
-#include "Planet.h"
+#include <SDL2/SDL.h>
 #include <vector>
+#include "Planet.h"
 
 class Simulate {
     public:
