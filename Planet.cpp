@@ -1,10 +1,10 @@
 #include "Planet.h"
 #include "bits/stdc++.h"
-#include "SDL.h"
+#include "params.h"
 
 using namespace std;
 
-Planet::Planet(double x1, double y1, double m, double rad, bool sun)
+Planet::Planet(float x1, float y1, float m, float rad, bool sun)
 {
     x=x1;
     y=y1;
@@ -13,16 +13,16 @@ Planet::Planet(double x1, double y1, double m, double rad, bool sun)
     s=sun;
 }
 
-double Planet::getX(){
+float Planet::getX(){
     return x;
 }
-double Planet::getY(){
+float Planet::getY(){
     return y;
 };
-double Planet::getR(){
+float Planet::getR(){
     return r;
 };
-double Planet::getMass(){
+float Planet::getMass(){
     return mass;
 }
 void Planet::drawRect(SDL_Renderer *renderer, int x1, int y1, int radius){
@@ -65,14 +65,14 @@ void Planet::calcAttraction(Planet *other){
     if(this==other){
         return;
     }
-    double x1 = other->getX();
-    double y1 = other->getY();
-    double distX = x-x1;
-    double distY = y-y1;
-    double dist = sqrt(distX*distX + distY*distY);
-    double force = (-1*gravitational_constant*mass*(other->getMass()))/(dist*dist);
-    double acc = force/mass;
-    double theta;
+    float x1 = other->getX();
+    float y1 = other->getY();
+    float distX = x-x1;
+    float distY = y-y1;
+    float dist = sqrt(distX*distX + distY*distY);
+    float force = (-1 * GRAVITY * mass *(other->getMass()))/(dist*dist);
+    float acc = force/mass;
+    float theta;
     if(abs(x-x1)<8 && y>y1 && abs(y-y1)<8){
         theta = M_PI/2;
     }
@@ -90,8 +90,8 @@ void Planet::calcAttraction(Planet *other){
         x_v += acc*cos(theta);
         y_v += acc*sin(theta);
     }
-    x+=x_v;
-    y+=y_v;
+    x += x_v;
+    y += y_v;
 }
 
 void Planet::draw(SDL_Renderer *renderer){
