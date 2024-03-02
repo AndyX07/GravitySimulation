@@ -30,6 +30,7 @@
 *.exe
 *.out
 *.app
+simulation
 
 # VS Code
 .vscode/
