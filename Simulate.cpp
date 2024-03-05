@@ -1,11 +1,12 @@
 #include "Simulate.h"
-#include "Planet.h"
 #include "bits/stdc++.h"
 #include "unistd.h"
 
 using namespace std;
 
 Simulate::Simulate(){
+    w = 800;
+    h = 600;
     SDL_CreateWindowAndRenderer(w, h, 0, &window, &renderer);
     SDL_SetWindowTitle(window, "Gravity Simulation");
     //p.push_back(sun);

@@ -1,10 +1,8 @@
 #include <bits/stdc++.h>
-#include "SDL.h"
+#include <SDL2/SDL.h>
 #include "Simulate.h"
 
-using namespace std;
-
-int main(int argc, char *argv[]){
+int main(){
     Simulate *sim = new Simulate();
     sim->run();
     return 0;
